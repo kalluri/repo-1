@@ -7,10 +7,11 @@ pool:
 jobs:
 - job: Job1
   steps:
-    - task: CmdLine@2
-      inputs:
-        script: |
-          echo "This is Job 1"
-          echo "Running sequentially"
-
+  - task: S3Download@1
+    inputs:
+      awsCredentials: 'aws'
+      regionName: 'us-east-1'
+      bucketName: 'azure-bucket-1'
+      globExpressions: '**'
+      targetFolder: '/tmp'
 
