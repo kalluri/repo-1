@@ -13,11 +13,4 @@ jobs:
           echo "This is Job 1"
           echo "Running sequentially"
 
-- job: Job2
-  dependsOn: Job1   # Job2 will run only after Job1 completes
-  steps:
-    - task: CmdLine@2
-      inputs:
-        script: |
-          echo "This is Job 2"
-          echo "Running after Job 1 completes"
+
